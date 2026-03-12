@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Piece - Arcos y Personajes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🏴‍☠️ One Piece - Arcos y Personajes</h1>
+    </header>
+
+    <main>
+        <section id="arcs-container">
+            <h2>Selecciona un Arco</h2>
+            <div id="arcs-grid" class="arcs-grid">
+                <!-- Los arcos se cargarán dinámicamente -->
+            </div>
+        </section>
+
+        <section id="characters-container" class="hidden">
+            <button id="back-btn" class="back-btn">← Volver a Arcos</button>
+            <h2 id="arc-title"></h2>
+            <div id="characters-grid" class="characters-grid">
+                <!-- Los personajes se cargarán dinámicamente -->
+            </div>
+        </section>
+
+        <!-- Modal para previsualización de imágenes -->
+        <div id="image-modal" class="modal">
+            <span class="modal-close">&times;</span>
+            <img class="modal-content" id="modal-image">
+            <div id="modal-caption"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 One Piece Fan Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
