@@ -1,0 +1,22 @@
+{
+  "maxVisibleArc": "thriller-bark",
+  "settings": {
+    "enableImageModal": true,
+    "enableCharacterFilter": false,
+    "showArcCounts": true
+  },
+  "arcLimits": {
+    "thriller-bark": "Thriller Bark Arc (hasta aquí visible)",
+    "sabaody-archipelago": "Sabaody Archipelago Arc",
+    "marineford": "Marineford Arc",
+    "timeskip": "Timeskip Arc",
+    "wano": "Wano Arc",
+    "egghead": "Egghead Arc"
+  },
+  "descriptions": {
+    "maxVisibleArc": "ID del último arco visible (incluido). Cambia este valor para mostrar más o menos arcos en la web.",
+    "enableImageModal": "Activa/desactiva el modal de previsualización de imágenes al hacer clic.",
+    "enableCharacterFilter": "Activa/desactiva el filtro de búsqueda de personajes (futuro).",
+    "showArcCounts": "Muestra/oculta el contador de personajes por arco."
+  }
+}
