@@ -1,4 +1,95 @@
-# README - One Piece Arcs Web Project
+# One Piece - Arcos y Personajes
+
+Una aplicación web interactiva para explorar todos los arcos de One Piece y sus personajes importantes.
+
+## 🚀 Publicar en GitHub Pages
+
+### Método 1: Automático con GitHub Actions (Recomendado)
+
+1. **Sube tu proyecto a GitHub:**
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin https://github.com/TU-USUARIO/TU-REPOSITORIO.git
+   git push -u origin main
+   ```
+
+2. **Activa GitHub Pages:**
+   - Ve a tu repositorio en GitHub
+   - Settings → Pages
+   - Source: "GitHub Actions"
+
+3. **El workflow se ejecutará automáticamente** y publicará tu web en:
+   `https://TU-USUARIO.github.io/TU-REPOSITORIO/`
+
+### Método 2: Manual
+
+1. **Sube a GitHub** (como arriba)
+
+2. **Activa Pages manualmente:**
+   - Settings → Pages
+   - Source: "Deploy from a branch"
+   - Branch: `main`
+   - Folder: `/root`
+   - Save
+
+## 📁 Estructura del Proyecto
+
+```
+one-piece-arcs/
+├── index.html              # Página principal
+├── styles.css              # Estilos
+├── script.js               # Lógica y datos
+├── config.json             # Configuración
+├── README.md               # Documentación
+└── .github/workflows/      # GitHub Actions
+    └── deploy.yml
+```
+
+## ⚙️ Configuración
+
+Edita `config.json` para personalizar:
+
+```json
+{
+  "maxVisibleArc": "thriller-bark",
+  "settings": {
+    "enableImageModal": true,
+    "enableCharacterFilter": false,
+    "showArcCounts": true
+  }
+}
+```
+
+### Opciones de `maxVisibleArc`:
+- `"thriller-bark"` - Hasta Thriller Bark
+- `"sabaody-archipelago"` - Hasta Sabaody
+- `"marineford"` - Hasta Marineford
+- `"wano"` - Hasta Wano
+- `"egghead"` - Todos los arcos
+
+## 🎯 Características
+
+- ✅ **Arcos filtrables** - Controla qué arcos mostrar
+- ✅ **Modal de imágenes** - Previsualización al hacer clic
+- ✅ **Configuración JSON** - Fácil personalización
+- ✅ **Responsive** - Funciona en móviles y desktop
+- ✅ **Datos oficiales** - Imágenes de One Piece Wiki
+
+## 🔧 Solución de Problemas
+
+### Si no carga la configuración:
+- Verifica que `config.json` esté en la raíz
+- Revisa la consola para errores CORS
+- La web usará configuración por defecto si falla
+
+### Si las imágenes no cargan:
+- Algunas imágenes pueden ser bloqueadas por CORS
+- La web funciona aunque fallen algunas imágenes
+
+---
 
 ## 📸 **Personajes con Imágenes Actualizadas (URLs proporcionadas por usuario):**
 
