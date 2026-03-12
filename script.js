@@ -472,7 +472,7 @@ const onePieceData = {
                     devilFruit: "Bane Bane no Mi (Fruta Bane Bane)"
                 },
                 {
-                    name: "Marshall D. Teach",
+                    name: "Marshall D. Teach (Kurohige)",
                     image: "https://static.wikia.nocookie.net/onepiece/images/6/6b/Marshall_D._Teach_Anime_Debut_Infobox.png/revision/latest?cb=20201020133237&path-prefix=es",
                     affiliation: "Piratas de Barbanegra",
                     devilFruit: "Ninguna"
