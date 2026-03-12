@@ -48,7 +48,7 @@ const onePieceData = {
                 },
                 {
                     name: "Makino",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/d/d3/Makino_Anime_Debut_Infobox.png/revision/latest?cb=20230410134248&path-prefix=es",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/d/dd/Makino_Anime_Dos_A%C3%B1os_Despu%C3%A9s_Infobox.png/revision/latest?cb=20190414134643&path-prefix=es",
                     affiliation: "Piratas de Pelirroja",
                     devilFruit: "Ninguna"
                 },
@@ -248,12 +248,6 @@ const onePieceData = {
                     image: "https://static.wikia.nocookie.net/onepiece/images/f/f5/Monkey_D._Dragon_Anime_Infobox.png/revision/latest?cb=20190705140157&path-prefix=es",
                     affiliation: "Ejército Revolucionario",
                     devilFruit: "Desconocida"
-                },
-                {
-                    name: "Alvida",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/c/cd/Alvida_Anime_Infobox.png/revision/latest?cb=20130715212930&path-prefix=es",
-                    affiliation: "Piratas de Alvida",
-                    devilFruit: "Sube Sube no Mi (Fruta Liso Liso)"
                 }
             ]
         },
@@ -262,18 +256,6 @@ const onePieceData = {
             name: "Reverse Mountain Arc",
             description: "La entrada a la Grand Line y el encuentro con Vivi",
             characters: [
-                {
-                    name: "Nefertari Vivi (Miss Wednesday)",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/9/99/Nefertari_Vivi_Anime_Debut_Infobox.png/revision/latest?cb=20200719214601&path-prefix=es",
-                    affiliation: "Baroque Works (encubierta)",
-                    devilFruit: "Ninguna"
-                },
-                {
-                    name: "Nico Robin (Miss All Sunday)",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/9/92/Nico_Robin_Anime_Debut_Infobox.png/revision/latest?cb=20140407170142&path-prefix=es",
-                    affiliation: "Baroque Works",
-                    devilFruit: "Hana Hana no Mi (Fruta Hana Hana)"
-                },
                 {
                     name: "Laboon",
                     image: "https://static.wikia.nocookie.net/onepiece/images/8/88/Laboon_Anime_Infobox.png/revision/latest?cb=20161017185928&path-prefix=es",
@@ -394,15 +376,21 @@ const onePieceData = {
             ]
         },
         {
-            id: "alabasta",
-            name: "Alabasta Arc",
-            description: "La batalla contra Crocodile por Alabasta",
+            id: "arabasta",
+            name: "Arabasta Arc",
+            description: "La batalla contra Crocodile por Arabasta",
             characters: [
                 {
                     name: "Crocodile",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/8/86/Sir_Crocodile_Anime_Post_Timeskip_Infobox.png",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/f/fd/Crocodile_Anime_Infobox.png/revision/latest?cb=20161216184552&path-prefix=es",
                     affiliation: "Baroque Works",
                     devilFruit: "Suna Suna no Mi (Fruta Suna Suna)"
+                },
+                {
+                    name: "Nico Robin (Miss All Sunday)",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/9/92/Nico_Robin_Anime_Debut_Infobox.png/revision/latest?cb=20140407170142&path-prefix=es",
+                    affiliation: "Baroque Works / Piratas de Sombrero de Paja",
+                    devilFruit: "Hana Hana no Mi (Fruta Hana Hana)"
                 },
                 {
                     name: "Nefertari Vivi",
@@ -411,34 +399,10 @@ const onePieceData = {
                     devilFruit: "Ninguna"
                 },
                 {
-                    name: "Pell",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/7/78/Pell_Anime_Infobox.png",
-                    affiliation: "Reino de Alabasta",
-                    devilFruit: "Tori Tori no Mi, modelo: Halcón (Fruta Tori Tori, modelo Halcón)"
-                },
-                {
-                    name: "Chaka",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/6/6c/Chaka_Anime_Infobox.png",
-                    affiliation: "Reino de Alabasta",
-                    devilFruit: "Inu Inu no Mi, modelo: Chacal (Fruta Inu Inu, modelo Chacal)"
-                },
-                {
-                    name: "Portgas D. Ace",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/4/4f/Portgas_D._Ace_Anime_Infobox.png/revision/latest/scale-to-width-down/1000?cb=20220330162003&path-prefix=es",
-                    affiliation: "Piratas de Barbablanca",
-                    devilFruit: "Mera Mera no Mi (Fruta Mera Mera)"
-                },
-                {
-                    name: "Koza",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/6/67/Koza_Anime_Infobox.png",
-                    affiliation: "Ejército Rebelde",
+                    name: "Nefertari Cobra",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/e/ed/Nefertari_Cobra_Anime_Debut_Infobox.png/revision/latest?cb=20130709144026&path-prefix=es",
+                    affiliation: "Reino de Arabasta",
                     devilFruit: "Ninguna"
-                },
-                {
-                    name: "Nico Robin",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/e/e7/Nico_Robin_Anime_Post_Timeskip_Infobox.png",
-                    affiliation: "Baroque Works (luego Piratas de Sombrero de Paja)",
-                    devilFruit: "Hana Hana no Mi (Fruta Hana Hana)"
                 },
                 {
                     name: "Daz Bones (Mr. 1)",
@@ -453,6 +417,18 @@ const onePieceData = {
                     devilFruit: "Mane Mane no Mi (Fruta Mane Mane)"
                 },
                 {
+                    name: "Pell",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/b/be/Pell_Anime_Infobox.png/revision/latest?cb=20241011222253&path-prefix=es",
+                    affiliation: "Reino de Arabasta",
+                    devilFruit: "Tori Tori no Mi, modelo: Halcón (Fruta Tori Tori, modelo Halcón)"
+                },
+                {
+                    name: "Chaka",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/7/73/Chaka_Anime_Infobox.png/revision/latest?cb=20241011222525&path-prefix=es",
+                    affiliation: "Reino de Arabasta",
+                    devilFruit: "Inu Inu no Mi, modelo: Chacal (Fruta Inu Inu, modelo Chacal)"
+                },
+                {
                     name: "Zala (Miss Doublefinger)",
                     image: "https://static.wikia.nocookie.net/onepiece/images/6/60/Zala_Anime_Infobox.png/revision/latest?cb=20160924182606&path-prefix=es",
                     affiliation: "Baroque Works",
@@ -460,19 +436,13 @@ const onePieceData = {
                 },
                 {
                     name: "Miss Merry Christmas",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/0/07/Miss_Merry_Christmas_Anime_Infobox.png",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/f/f4/Drophy_Anime_Infobox.png/revision/latest?cb=20161111225821&path-prefix=es",
                     affiliation: "Baroque Works",
                     devilFruit: "Mogu Mogu no Mi (Fruta Mogu Mogu)"
                 },
                 {
                     name: "Mr. 7",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/7/7e/Mr._7_Anime_Infobox.png",
-                    affiliation: "Baroque Works",
-                    devilFruit: "Ninguna"
-                },
-                {
-                    name: "Miss Father's Day",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/9/9e/Miss_Father's_Day_Anime_Infobox.png",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/d/da/Babe_Anime_Infobox.png/revision/latest?cb=20161111215928&path-prefix=es",
                     affiliation: "Baroque Works",
                     devilFruit: "Ninguna"
                 }
@@ -540,70 +510,10 @@ const onePieceData = {
             characters: [
                 {
                     name: "Enel",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/6/6d/Enel_Anime_Infobox.png",
-                    affiliation: "Auto-proclamado Dios de Skypiea",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/a/ad/Enel_Anime_Infobox.png/revision/latest?cb=20220525110412&path-prefix=es",
+                    affiliation: "Skypiea",
                     devilFruit: "Goro Goro no Mi (Fruta Goro Goro)"
                 },
-                {
-                    name: "Gan Fall",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/9/9e/Gan_Fall_Anime_Infobox.png",
-                    affiliation: "Antiguo Dios de Skypiea",
-                    devilFruit: "Ninguna"
-                },
-                {
-                    name: "Conis",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/6/62/Conis_Anime_Infobox.png",
-                    affiliation: "Skypiea",
-                    devilFruit: "Ninguna"
-                },
-                {
-                    name: "Wyper",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/0/0b/Wyper_Anime_Infobox.png",
-                    affiliation: "Guerreros Shandia",
-                    devilFruit: "Ninguna"
-                },
-                {
-                    name: "Noland",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/8/81/Noland_Anime_Infobox.png",
-                    affiliation: "Explorador (flashback)",
-                    devilFruit: "Ninguna"
-                },
-                {
-                    name: "Satori",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/7/7c/Satori_Anime_Infobox.png",
-                    affiliation: "Sacerdote de Enel",
-                    devilFruit: "Ninguna (usa Mantra)"
-                },
-                {
-                    name: "Shura",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/8/89/Shura_Anime_Infobox.png",
-                    affiliation: "Sacerdote de Enel",
-                    devilFruit: "Ninguna (usa Mantra)"
-                },
-                {
-                    name: "Gedatsu",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/6/68/Gedatsu_Anime_Infobox.png",
-                    affiliation: "Sacerdote de Enel",
-                    devilFruit: "Ninguna (usa Mantra)"
-                },
-                {
-                    name: "Ohm",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/0/0f/Ohm_Anime_Infobox.png",
-                    affiliation: "Sacerdote de Enel",
-                    devilFruit: "Ninguna (usa Mantra)"
-                },
-                {
-                    name: "Aisa",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/6/67/Aisa_Anime_Infobox.png",
-                    affiliation: "Shandia",
-                    devilFruit: "Ninguna (posee Mantra)"
-                },
-                {
-                    name: "Kamakiri",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/7/7a/Kamakiri_Anime_Infobox.png",
-                    affiliation: "Guerrero Shandia",
-                    devilFruit: "Ninguna"
-                }
             ]
         },
         {
@@ -613,37 +523,37 @@ const onePieceData = {
             characters: [
                 {
                     name: "Franky",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/5/5b/Franky_Anime_Post_Timeskip_Infobox.png",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/0/07/Franky_Anime_Debut_Infobox.png/revision/latest?cb=20230627144312&path-prefix=es",
                     affiliation: "Franky Family (luego Piratas de Sombrero de Paja)",
                     devilFruit: "Ninguna"
                 },
                 {
                     name: "Foxy",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/2/28/Foxy_Anime_Infobox.png",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/a/a7/Foxy_Anime_Debut_Infobox.png/revision/latest?cb=20151221162224&path-prefix=es",
                     affiliation: "Piratas de Foxy",
                     devilFruit: "Noro Noro no Mi (Fruta Noro Noro)"
                 },
                 {
                     name: "Kuzan (Aokiji)",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/d/dc/Aokiji_Anime_Infobox.png",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/e/eb/Kuzan_Anime_Debut_Infobox.png/revision/latest?cb=20170112234533&path-prefix=es",
                     affiliation: "Marina",
                     devilFruit: "Hie Hie no Mi (Fruta Hie Hie)"
                 },
                 {
                     name: "Iceburg",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/b/b4/Iceburg_Anime_Infobox.png",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/0/00/Iceburg_Anime_Infobox.png/revision/latest?cb=20230620132111&path-prefix=es",
                     affiliation: "Galley-La Company",
                     devilFruit: "Ninguna"
                 },
                 {
-                    name: "Paulie",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/8/83/Paulie_Anime_Infobox.png",
-                    affiliation: "Galley-La Company",
-                    devilFruit: "Ninguna"
+                    name: "Rob Lucci",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/4/45/Rob_Lucci_Anime_Debut_Infobox.png/revision/latest?cb=20240921080101&path-prefix=es",
+                    affiliation: "CP9",
+                    devilFruit: "Neko Neko no Mi, modelo: Leopardo (Fruta Neko Neko, modelo Leopardo)"
                 },
                 {
                     name: "Kaku",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/4/46/Kaku_Anime_Infobox.png",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/1/15/Kaku_Anime_Debut_Infobox.png/revision/latest?cb=20221223145958&path-prefix=es",
                     affiliation: "CP9",
                     devilFruit: "Ushi Ushi no Mi, modelo: Jirafa (Fruta Ushi Ushi, modelo Jirafa)"
                 },
@@ -655,51 +565,33 @@ const onePieceData = {
                 },
                 {
                     name: "Blueno",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/e/e2/Blueno_Anime_Infobox.png",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/d/d4/Blueno_Anime_Debut_Infobox.png/revision/latest?cb=20200418013041&path-prefix=es",
                     affiliation: "CP9",
                     devilFruit: "Doa Doa no Mi (Fruta Doa Doa)"
                 },
                 {
                     name: "Kalifa",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/2/2e/Kalifa_Anime_Infobox.png",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/4/49/Kalifa_Anime_Debut_Infobox.png/revision/latest?cb=20140303153110&path-prefix=es",
                     affiliation: "CP9",
                     devilFruit: "Awa Awa no Mi (Fruta Awa Awa)"
                 },
                 {
                     name: "Kumadori",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/1/13/Kumadori_Anime_Infobox.png",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/0/02/Kumadori_Anime_Debut_Infobox.png/revision/latest?cb=20220612144024&path-prefix=es",
                     affiliation: "CP9",
                     devilFruit: "Ninguna"
                 },
                 {
                     name: "Fukuro",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/7/7e/Fukuro_Anime_Infobox.png",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/3/35/Fukurou_Anime_Debut_Infobox.png/revision/latest?cb=20121215231501&path-prefix=es",
                     affiliation: "CP9",
                     devilFruit: "Ninguna"
                 },
                 {
                     name: "Spandam",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/0/0d/Spandam_Anime_Infobox.png",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/f/f3/Spandam_Anime_Debut_Infobox.png/revision/latest?cb=20160919212438&path-prefix=es",
                     affiliation: "CP9",
                     devilFruit: "Ninguna"
-                },
-                {
-                    name: "Kokoro",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/9/96/Kokoro_Anime_Infobox.png",
-                    affiliation: "Water 7",
-                    devilFruit: "Ninguna"
-                },
-                {
-                    name: "Chimney",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/6/67/Chimney_Anime_Infobox.png",
-                    affiliation: "Water 7",
-                    devilFruit: "Ninguna"
-                },
-                {
-                    name: "Gonbe",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/8/87/Gonbe_Anime_Infobox.png",
-                    affiliation: "Water 7",
-                    devilFruit: "Ninguna (nutria)"
                 }
             ]
         },
@@ -710,38 +602,50 @@ const onePieceData = {
             characters: [
                 {
                     name: "Gecko Moria",
-                    image: "https://i.imgur.com/3WZ2Y6D.jpg",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/b/be/Gecko_Moria_Anime_Infobox.png/revision/latest?cb=20160218215318&path-prefix=es",
                     affiliation: "Piratas de Gecko Moria",
                     devilFruit: "Kage Kage no Mi (Fruta Kage Kage)"
                 },
                 {
                     name: "Brook",
-                    image: "https://i.imgur.com/8WZ3Z7E.jpg",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/e/ea/Brook_Anime_Debut_Infobox.png/revision/latest?cb=20160813201432&path-prefix=es",
                     affiliation: "Piratas de Sombrero de Paja",
                     devilFruit: "Yomi Yomi no Mi (Fruta Yomi Yomi)"
                 },
                 {
                     name: "Perona",
-                    image: "https://i.imgur.com/5WZ4A8F.jpg",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/a/a2/Perona_Anime_Debut_Infobox.png/revision/latest?cb=20160818111720&path-prefix=es",
                     affiliation: "Piratas de Gecko Moria",
                     devilFruit: "Horo Horo no Mi (Fruta Horo Horo)"
                 },
                 {
                     name: "Absalom",
-                    image: "https://i.imgur.com/7WZ5B9G.jpg",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/5/56/Absalom_Anime_Infobox.png/revision/latest?cb=20131007143323&path-prefix=es",
                     affiliation: "Piratas de Gecko Moria",
                     devilFruit: "Suke Suke no Mi (Fruta Suke Suke)"
                 },
                 {
                     name: "Hogback",
-                    image: "https://i.imgur.com/4WZ6C0H.jpg",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/4/4a/Hogback_Anime_Infobox.png/revision/latest?cb=20131007143733&path-prefix=es",
                     affiliation: "Piratas de Gecko Moria",
                     devilFruit: "Ninguna"
                 },
                 {
                     name: "Lola",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/6/6c/Lola_Anime_Infobox.png/revision/latest?cb=20130715212930&path-prefix=es",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/3/3e/Charlotte_Lola_Anime_Infobox.png/revision/latest?cb=20160924212743&path-prefix=es",
                     affiliation: "Piratas de Rolling (aliada)",
+                    devilFruit: "Ninguna"
+                },
+                {
+                    name: "Oars",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/5/55/Oars_Anime_Infobox.png/revision/latest?cb=20160921095403&path-prefix=es",
+                    affiliation: "Piratas de Gecko Moria (zombie)",
+                    devilFruit: "Ninguna"
+                },
+                {
+                    name: "Ryuma",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/6/6a/Shimotsuki_Ryuma_Anime_Infobox.png/revision/latest?cb=20160917110237&path-prefix=es",
+                    affiliation: "Piratas de Gecko Moria (zombie)",
                     devilFruit: "Ninguna"
                 }
             ]
@@ -1558,7 +1462,7 @@ const onePieceData = {
             characters: [
                 {
                     name: "Dr. Vegapunk",
-                    image: "https://i.imgur.com/8WZ6K0P.jpg",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/8/8a/Vegapunk_en_los_recuerdos_de_Kuma.png/revision/latest/scale-to-width-down/1000?cb=20220920145312&path-prefix=es",
                     affiliation: "Marina / Científico",
                     devilFruit: "Ninguna"
                 },
@@ -1617,6 +1521,85 @@ const onePieceData = {
                     devilFruit: "Toshi Toshi no Mi (Fruta Toshi Toshi)"
                 }
             ]
+        },
+        {
+            id: "otros",
+            name: "Otros",
+            description: "Personajes especiales y adicionales independientes de los arcos principales",
+            characters: [
+                {
+                    name: "Gol D. Roger",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/2/24/Gol_D._Roger_Anime_Infobox.png/revision/latest?cb=20240928202410&path-prefix=es",
+                    affiliation: "Piratas de Roger",
+                    devilFruit: "Desconocido"
+                },
+                {
+                    name: "Sengoku",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/1/1a/Sengoku_Anime_Debut_Infobox.png/revision/latest?cb=20160818110216&path-prefix=es",
+                    affiliation: "Marina",
+                    devilFruit: "Desconocido"
+                },
+                {
+                    name: "Donquixote Doflamingo",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/7/7e/Donquixote_Doflamingo_Anime_Infobox.png/revision/latest?cb=20220521220453&path-prefix=es",
+                    affiliation: "Siete Guerreros del Mar (ex)",
+                    devilFruit: "Desconocido"
+                },
+                {
+                    name: "Bartholomew Kuma",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/8/8d/Bartholomew_Kuma_Anime_Infobox.png/revision/latest?cb=20220612143841&path-prefix=es",
+                    affiliation: "Siete Guerreros del Mar (ex)",
+                    devilFruit: "Desconocido"
+                },
+                {
+                    name: "Edward Newgate (Shirohige)",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/b/b7/Edward_Newgate_Anime_Infobox.png/revision/latest?cb=20130602201437&path-prefix=es",
+                    affiliation: "Piratas de Barbablanca",
+                    devilFruit: "Desconocido"
+                },
+                {
+                    name: "Marco",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/1/16/Marco_Anime_Debut_Infobox.png/revision/latest?cb=20160401181925&path-prefix=es",
+                    affiliation: "Piratas de Barbablanca",
+                    devilFruit: "Desconocido"
+                },
+                {
+                    name: "5 Ancianos / Gorosei",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/e/e0/Ethanbaron_V._Nusjuro_Anime_Infobox.png/revision/latest?cb=20230611184652&path-prefix=es",
+                    affiliation: "Gobierno Mundial",
+                    devilFruit: "Desconocido"
+                },
+                {
+                    name: "5 Ancianos / Gorosei",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/b/b6/Shepherd_Ju_Peter_Anime_Infobox.png/revision/latest?cb=20230611184912&path-prefix=es",
+                    affiliation: "Gobierno Mundial",
+                    devilFruit: "Desconocido"
+                },
+                {
+                    name: "5 Ancianos / Gorosei",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/b/b4/Topman_Warcury_Anime_Infobox.png/revision/latest?cb=20240915181111&path-prefix=es",
+                    affiliation: "Gobierno Mundial",
+                    devilFruit: "Desconocido"
+                },
+                {
+                    name: "5 Ancianos / Gorosei",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/e/ea/Marcus_Mars_Anime_Infobox.png/revision/latest?cb=20230611172953&path-prefix=es",
+                    affiliation: "Gobierno Mundial",
+                    devilFruit: "Desconocido"
+                },
+                {
+                    name: "5 Ancianos / Gorosei",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/a/ae/Jaygarcia_Saturn_Anime_Infobox.png/revision/latest?cb=20230211160616&path-prefix=es",
+                    affiliation: "Gobierno Mundial",
+                    devilFruit: "Desconocido"
+                },
+                {
+                    name: "Vegapunk",
+                    image: "https://thumbs.dreamstime.com/b/foto-con-un-personaje-desconocido-inc%C3%B3gnito-fondo-blanco-silueta-negra-signo-de-interrogaci%C3%B3n-hombre-an%C3%B3nimo-capucha-sobre-328219331.jpg?w=992",
+                    affiliation: "Gobierno Mundial",
+                    devilFruit: "Desconocido"
+                }
+            ]
         }
     ]
 };
@@ -1662,7 +1645,15 @@ function filterVisibleArcs() {
     }
     
     console.log(`Mostrando arcos hasta '${CONFIG.maxVisibleArc}' (índice ${maxIndex})`);
-    return onePieceData.arcs.slice(0, maxIndex + 1);
+    
+    // Siempre incluir la categoría "Otros" al final
+    const filteredArcs = onePieceData.arcs.slice(0, maxIndex + 1);
+    const otrosArc = onePieceData.arcs.find(arc => arc.id === 'otros');
+    if (otrosArc) {
+        filteredArcs.push(otrosArc);
+    }
+    
+    return filteredArcs;
 }
 
 // Función para inicializar la aplicación
