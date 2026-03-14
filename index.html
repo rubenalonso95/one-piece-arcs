@@ -9,6 +9,11 @@
 <body>
     <header>
         <h1>🏴‍☠️ One Piece - Arcos y Personajes</h1>
+        <nav class="nav-menu">
+            <button id="arcs-btn" class="nav-btn active">Arcos</button>
+            <button id="characters-btn" class="nav-btn">Base de Datos</button>
+            <button id="trivia-btn" class="nav-btn">Trivia</button>
+        </nav>
     </header>
 
     <main>
@@ -24,6 +29,62 @@
             <h2 id="arc-title"></h2>
             <div id="characters-grid" class="characters-grid">
                 <!-- Los personajes se cargarán dinámicamente -->
+            </div>
+        </section>
+
+        <section id="database-container" class="hidden">
+            <h2>Base de Datos de Personajes</h2>
+            <div class="database-controls">
+                <input type="text" id="character-search" placeholder="Buscar personaje..." class="search-input">
+                <select id="arc-filter" class="filter-select">
+                    <option value="">Todos los arcos</option>
+                </select>
+            </div>
+            <div id="database-grid" class="characters-grid">
+                <!-- Todos los personajes se cargarán dinámicamente -->
+            </div>
+        </section>
+
+        <section id="trivia-container" class="hidden">
+            <div id="trivia-start" class="trivia-start">
+                <h2>🎯 Trivia de One Piece</h2>
+                <p>¡Pon a prueba tu conocimiento de los personajes de One Piece!</p>
+                <p>Responde 10 preguntas aleatorias sobre los personajes.</p>
+                <button id="start-trivia-btn" class="start-btn">Comenzar Trivia</button>
+            </div>
+            
+            <div id="trivia-quiz" class="trivia-quiz hidden">
+                <div class="quiz-header">
+                    <span class="question-counter">Pregunta <span id="current-question">1</span> de 10</span>
+                    <button id="quit-trivia-btn" class="quit-btn">Abandonar</button>
+                </div>
+                
+                <div class="quiz-content">
+                    <div class="question-image">
+                        <img id="trivia-character-image" src="" alt="Personaje">
+                        <p>¿Quién es este personaje?</p>
+                    </div>
+                    
+                    <div class="options-grid">
+                        <div id="options-container" class="options-container">
+                            <!-- Las opciones se cargarán dinámicamente -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="trivia-results" class="trivia-results hidden">
+                <h2>🏆 Resultados</h2>
+                <div class="results-content">
+                    <div class="score-display">
+                        <p>Has acertado <span id="correct-answers" class="score-number">0</span> de 10 preguntas</p>
+                        <div class="score-percentage">
+                            <span id="score-percentage-text">0%</span>
+                        </div>
+                    </div>
+                    <div id="result-message" class="result-message"></div>
+                    <button id="restart-trivia-btn" class="restart-btn">Jugar de Nuevo</button>
+                </div>
             </div>
         </section>
 
