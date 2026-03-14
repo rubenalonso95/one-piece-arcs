@@ -277,7 +277,7 @@ const onePieceData = {
             characters: [
                 {
                     name: "Mr. 5",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/3/34/Crocus_Anime_Infobox.png/revision/latest?cb=20250808231637&path-prefix=es",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/1/14/Gem_Anime_Infobox.png/revision/latest?cb=20201005194238&path-prefix=es",
                     affiliation: "Baroque Works",
                     devilFruit: "Bomu Bomu no Mi (Fruta Bomba)"
                 },
@@ -559,7 +559,7 @@ const onePieceData = {
                 },
                 {
                     name: "Jabura",
-                    image: "https://static.wikia.nocookie.net/onepiece/images/9/90/Jabura_Anime_Infobox.png",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/d/d0/Jabra_Anime_Debut_Infobox.png/revision/latest?cb=20160924140305&path-prefix=es",
                     affiliation: "CP9",
                     devilFruit: "Inu Inu no Mi, modelo: Lobo (Fruta Inu Inu, modelo Lobo)"
                 },
@@ -1595,7 +1595,7 @@ const onePieceData = {
                 },
                 {
                     name: "Vegapunk",
-                    image: "https://thumbs.dreamstime.com/b/foto-con-un-personaje-desconocido-inc%C3%B3gnito-fondo-blanco-silueta-negra-signo-de-interrogaci%C3%B3n-hombre-an%C3%B3nimo-capucha-sobre-328219331.jpg?w=992",
+                    image: "https://static.wikia.nocookie.net/onepiece/images/c/c5/Vegapunk_Anime_Infobox.png/revision/latest?cb=20240906094516&path-prefix=es",
                     affiliation: "Gobierno Mundial",
                     devilFruit: "Desconocido"
                 }
@@ -1738,46 +1738,468 @@ function setupImageModalListeners() {
     const modalCaption = document.getElementById('modal-caption');
     const closeBtn = document.getElementsByClassName('modal-close')[0];
     
+    // Eliminar todos los event listeners anteriores
+    const newModal = modal.cloneNode(true);
+    modal.parentNode.replaceChild(newModal, modal);
+    
+    // Reasignar variables
+    const updatedModal = document.getElementById('image-modal');
+    const updatedCloseBtn = updatedModal.getElementsByClassName('modal-close')[0];
+    
     // Añadir event listeners a todas las imágenes de personajes
     const characterImages = document.querySelectorAll('.character-image');
     characterImages.forEach(img => {
         img.addEventListener('click', function() {
-            modal.style.display = 'block';
+            updatedModal.style.display = 'block';
             modalImg.src = this.src;
             modalCaption.innerHTML = this.dataset.character;
         });
     });
     
+    // Configurar event listeners universales del modal
     // Cerrar modal al hacer clic en la X
-    closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
+    updatedCloseBtn.addEventListener('click', function() {
+        updatedModal.style.display = 'none';
     });
     
     // Cerrar modal al hacer clic fuera de la imagen
-    modal.addEventListener('click', function(event) {
-        if (event.target === modal) {
-            modal.style.display = 'none';
+    updatedModal.addEventListener('click', function(event) {
+        if (event.target === updatedModal) {
+            updatedModal.style.display = 'none';
         }
     });
     
     // Cerrar modal con la tecla Escape
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape' && modal.style.display === 'block') {
-            modal.style.display = 'none';
+        if (event.key === 'Escape' && updatedModal.style.display === 'block') {
+            updatedModal.style.display = 'none';
         }
     });
+}
+
+// Variables globales para la trivia
+let triviaState = {
+    currentQuestion: 0,
+    score: 0,
+    questions: [],
+    allCharacters: []
+};
+
+// Función para obtener todos los personajes de todos los arcos (respetando el límite del config)
+function getAllCharacters() {
+    const allChars = [];
+    const maxArcId = CONFIG.maxVisibleArc;
+    
+    // Encontrar el índice del arco máximo permitido
+    const maxArcIndex = onePieceData.arcs.findIndex(arc => arc.id === maxArcId);
+    
+    // Solo incluir personajes hasta el arco permitido
+    const arcsToShow = maxArcIndex >= 0 ? onePieceData.arcs.slice(0, maxArcIndex + 1) : onePieceData.arcs;
+    
+    // Siempre incluir la categoría "Otros" al final
+    const otrosArc = onePieceData.arcs.find(arc => arc.id === 'otros');
+    if (otrosArc) {
+        arcsToShow.push(otrosArc);
+    }
+    
+    arcsToShow.forEach(arc => {
+        arc.characters.forEach(character => {
+            allChars.push({
+                name: character.name,
+                image: character.image,
+                affiliation: character.affiliation,
+                devilFruit: character.devilFruit,
+                arc: arc.name
+            });
+        });
+    });
+    return allChars;
+}
+
+// Función para generar preguntas aleatorias de trivia
+function generateTriviaQuestions() {
+    const questions = [];
+    const characters = [...getAllCharacters()];
+    const usedCharacters = [];
+    
+    // Generar 10 preguntas aleatorias
+    for (let i = 0; i < 10 && characters.length > 0; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        const correctCharacter = characters.splice(randomIndex, 1)[0];
+        usedCharacters.push(correctCharacter);
+        
+        // Generar 3 opciones incorrectas
+        const wrongOptions = [];
+        const tempCharacters = [...getAllCharacters()].filter(c => c.name !== correctCharacter.name);
+        
+        for (let j = 0; j < 3 && tempCharacters.length > 0; j++) {
+            const wrongIndex = Math.floor(Math.random() * tempCharacters.length);
+            wrongOptions.push(tempCharacters.splice(wrongIndex, 1)[0].name);
+        }
+        
+        // Mezclar todas las opciones
+        const allOptions = [correctCharacter.name, ...wrongOptions];
+        const shuffledOptions = allOptions.sort(() => Math.random() - 0.5);
+        
+        questions.push({
+            image: correctCharacter.image,
+            correctAnswer: correctCharacter.name,
+            options: shuffledOptions
+        });
+    }
+    
+    return questions;
+}
+
+// Función para configurar el modal de imágenes de trivia
+function setupTriviaImageModal() {
+    if (!CONFIG.settings.enableImageModal) return; // Verificar configuración
+    
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('modal-image');
+    const modalCaption = document.getElementById('modal-caption');
+    const triviaImage = document.getElementById('trivia-character-image');
+    
+    // Eliminar event listeners anteriores para evitar duplicados
+    const newTriviaImage = triviaImage.cloneNode(true);
+    triviaImage.parentNode.replaceChild(newTriviaImage, triviaImage);
+    
+    // Añadir event listener para la imagen de trivia
+    newTriviaImage.addEventListener('click', function() {
+        modal.style.display = 'block';
+        modalImg.src = this.src;
+        modalCaption.innerHTML = this.dataset.character || 'Personaje de One Piece';
+    });
+}
+
+// Función para mostrar la pregunta actual
+function showTriviaQuestion() {
+    const question = triviaState.questions[triviaState.currentQuestion];
+    const questionImage = document.getElementById('trivia-character-image');
+    const optionsContainer = document.getElementById('options-container');
+    const currentQuestionSpan = document.getElementById('current-question');
+    
+    // Actualizar contador
+    currentQuestionSpan.textContent = triviaState.currentQuestion + 1;
+    
+    // Mostrar imagen con el mismo formato que en las otras secciones
+    questionImage.src = question.image;
+    questionImage.alt = "Personaje";
+    questionImage.setAttribute('data-character', 'Personaje de One Piece');
+    questionImage.onerror = function() {
+        this.src = getCharacterImage('Personaje', triviaState.currentQuestion);
+    };
+    
+    // Limpiar y mostrar opciones
+    optionsContainer.innerHTML = '';
+    question.options.forEach((option, index) => {
+        const optionBtn = document.createElement('button');
+        optionBtn.className = 'option-btn';
+        optionBtn.textContent = option;
+        optionBtn.addEventListener('click', () => selectAnswer(option, optionBtn));
+        optionsContainer.appendChild(optionBtn);
+    });
+    
+    // Configurar el modal para la imagen de trivia
+    setupTriviaImageModal();
+}
+
+// Función para manejar la selección de respuesta
+function selectAnswer(selectedOption, buttonElement) {
+    const question = triviaState.questions[triviaState.currentQuestion];
+    const allButtons = document.querySelectorAll('.option-btn');
+    
+    // Deshabilitar todos los botones
+    allButtons.forEach(btn => btn.disabled = true);
+    
+    // Marcar respuesta correcta e incorrecta
+    if (selectedOption === question.correctAnswer) {
+        buttonElement.classList.add('correct');
+        triviaState.score++;
+    } else {
+        buttonElement.classList.add('incorrect');
+        // Marcar la respuesta correcta
+        allButtons.forEach(btn => {
+            if (btn.textContent === question.correctAnswer) {
+                btn.classList.add('correct');
+            }
+        });
+    }
+    
+    // Avanzar a la siguiente pregunta después de un delay
+    setTimeout(() => {
+        triviaState.currentQuestion++;
+        if (triviaState.currentQuestion < 10) {
+            showTriviaQuestion();
+        } else {
+            showTriviaResults();
+        }
+    }, 2000);
+}
+
+// Función para mostrar los resultados
+function showTriviaResults() {
+    const quizDiv = document.getElementById('trivia-quiz');
+    const resultsDiv = document.getElementById('trivia-results');
+    const correctAnswersSpan = document.getElementById('correct-answers');
+    const scorePercentageSpan = document.getElementById('score-percentage-text');
+    const resultMessageDiv = document.getElementById('result-message');
+    
+    quizDiv.classList.add('hidden');
+    resultsDiv.classList.remove('hidden');
+    
+    correctAnswersSpan.textContent = triviaState.score;
+    const percentage = (triviaState.score / 10) * 100;
+    scorePercentageSpan.textContent = percentage + '%';
+    
+    // Mensaje según el puntaje
+    let message = '';
+    if (percentage === 100) {
+        message = '¡Perfecto! ¡Eres un verdadero experto en One Piece! 🏆';
+    } else if (percentage >= 80) {
+        message = '¡Excelente! Conoces muy bien a los personajes de One Piece! ⭐';
+    } else if (percentage >= 60) {
+        message = '¡Bien hecho! Tienes buenos conocimientos de One Piece! 👍';
+    } else if (percentage >= 40) {
+        message = '¡No está mal! Sigue viendo One Piece para mejorar! 📚';
+    } else {
+        message = '¡Sigue practicando! El mundo de One Piece es muy grande! 🌊';
+    }
+    
+    resultMessageDiv.textContent = message;
+}
+
+// Función para iniciar la trivia
+function startTrivia() {
+    triviaState = {
+        currentQuestion: 0,
+        score: 0,
+        questions: generateTriviaQuestions(),
+        allCharacters: getAllCharacters()
+    };
+    
+    const startDiv = document.getElementById('trivia-start');
+    const quizDiv = document.getElementById('trivia-quiz');
+    
+    startDiv.classList.add('hidden');
+    quizDiv.classList.remove('hidden');
+    
+    // Configurar el modal antes de mostrar la primera pregunta
+    setupImageModalListeners();
+    showTriviaQuestion();
+}
+
+// Función para reiniciar la trivia
+function restartTrivia() {
+    const startDiv = document.getElementById('trivia-start');
+    const quizDiv = document.getElementById('trivia-quiz');
+    const resultsDiv = document.getElementById('trivia-results');
+    
+    resultsDiv.classList.add('hidden');
+    startDiv.classList.remove('hidden');
+    quizDiv.classList.add('hidden');
+}
+
+// Función para abandonar la trivia
+function quitTrivia() {
+    const startDiv = document.getElementById('trivia-start');
+    const quizDiv = document.getElementById('trivia-quiz');
+    
+    quizDiv.classList.add('hidden');
+    startDiv.classList.remove('hidden');
+}
+
+// Función para mostrar la base de datos de personajes
+function showDatabase() {
+    const arcsContainer = document.getElementById('arcs-container');
+    const charactersContainer = document.getElementById('characters-container');
+    const databaseContainer = document.getElementById('database-container');
+    const triviaContainer = document.getElementById('trivia-container');
+    
+    // Ocultar todas las secciones
+    arcsContainer.classList.add('hidden');
+    charactersContainer.classList.add('hidden');
+    triviaContainer.classList.add('hidden');
+    
+    // Mostrar base de datos
+    databaseContainer.classList.remove('hidden');
+    
+    // Cargar todos los personajes
+    loadAllCharacters();
+    
+    // Configurar filtros
+    setupDatabaseFilters();
+}
+
+// Función para cargar todos los personajes en la base de datos
+function loadAllCharacters() {
+    const databaseGrid = document.getElementById('database-grid');
+    const allCharacters = getAllCharacters();
+    
+    databaseGrid.innerHTML = '';
+    
+    allCharacters.forEach((character, index) => {
+        const characterCard = document.createElement('div');
+        characterCard.className = 'character-card';
+        characterCard.dataset.name = character.name.toLowerCase();
+        characterCard.dataset.arc = character.arc;
+        
+        characterCard.innerHTML = `
+            <img src="${character.image}" alt="${character.name}" class="character-image" data-character="${character.name}" onerror="this.src='${getCharacterImage(character.name, index)}'">
+            <div class="character-info">
+                <div class="character-name">${character.name}</div>
+                <div class="character-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Afiliación:</span>
+                        <span class="affiliation">${character.affiliation}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Arco:</span>
+                        <span>${character.arc}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Fruta del Diablo:</span>
+                        <span class="devil-fruit">${character.devilFruit}</span>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        databaseGrid.appendChild(characterCard);
+    });
+    
+    // Configurar modal de imágenes
+    setupImageModalListeners();
+}
+
+// Función para configurar los filtros de la base de datos
+function setupDatabaseFilters() {
+    const searchInput = document.getElementById('character-search');
+    const arcFilter = document.getElementById('arc-filter');
+    const databaseGrid = document.getElementById('database-grid');
+    
+    // Llenar el filtro de arcos (solo hasta el límite del config + "Otros")
+    const arcFilterSelect = document.getElementById('arc-filter');
+    arcFilterSelect.innerHTML = '<option value="">Todos los arcos</option>';
+    
+    const maxArcId = CONFIG.maxVisibleArc;
+    const maxArcIndex = onePieceData.arcs.findIndex(arc => arc.id === maxArcId);
+    let arcsToShow = maxArcIndex >= 0 ? onePieceData.arcs.slice(0, maxArcIndex + 1) : onePieceData.arcs;
+    
+    // Siempre incluir la categoría "Otros" al final
+    const otrosArc = onePieceData.arcs.find(arc => arc.id === 'otros');
+    if (otrosArc) {
+        arcsToShow.push(otrosArc);
+    }
+    
+    arcsToShow.forEach(arc => {
+        const option = document.createElement('option');
+        option.value = arc.name;
+        option.textContent = arc.name;
+        arcFilterSelect.appendChild(option);
+    });
+    
+    // Función de filtrado
+    function filterCharacters() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const selectedArc = arcFilter.value;
+        const characterCards = databaseGrid.querySelectorAll('.character-card');
+        
+        characterCards.forEach(card => {
+            const name = card.dataset.name;
+            const arc = card.dataset.arc;
+            
+            const matchesSearch = name.includes(searchTerm);
+            const matchesArc = !selectedArc || arc === selectedArc;
+            
+            if (matchesSearch && matchesArc) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+    
+    // Event listeners
+    searchInput.addEventListener('input', filterCharacters);
+    arcFilter.addEventListener('change', filterCharacters);
+}
+
+// Función para mostrar la trivia
+function showTrivia() {
+    const arcsContainer = document.getElementById('arcs-container');
+    const charactersContainer = document.getElementById('characters-container');
+    const databaseContainer = document.getElementById('database-container');
+    const triviaContainer = document.getElementById('trivia-container');
+    
+    // Ocultar todas las secciones
+    arcsContainer.classList.add('hidden');
+    charactersContainer.classList.add('hidden');
+    databaseContainer.classList.add('hidden');
+    
+    // Mostrar trivia
+    triviaContainer.classList.remove('hidden');
+}
+
+// Función para mostrar los arcos (vista principal)
+function showArcs() {
+    const arcsContainer = document.getElementById('arcs-container');
+    const charactersContainer = document.getElementById('characters-container');
+    const databaseContainer = document.getElementById('database-container');
+    const triviaContainer = document.getElementById('trivia-container');
+    
+    // Ocultar todas las secciones
+    charactersContainer.classList.add('hidden');
+    databaseContainer.classList.add('hidden');
+    triviaContainer.classList.add('hidden');
+    
+    // Mostrar arcos
+    arcsContainer.classList.remove('hidden');
+}
+
+// Función para actualizar los botones de navegación activos
+function updateActiveNav(activeBtn) {
+    const navButtons = document.querySelectorAll('.nav-btn');
+    navButtons.forEach(btn => btn.classList.remove('active'));
+    activeBtn.classList.add('active');
 }
 
 // Función para configurar los event listeners
 function setupEventListeners() {
     const backBtn = document.getElementById('back-btn');
     backBtn.addEventListener('click', () => {
-        const arcsContainer = document.getElementById('arcs-container');
-        const charactersContainer = document.getElementById('characters-container');
-        
-        charactersContainer.classList.add('hidden');
-        arcsContainer.classList.remove('hidden');
+        showArcs();
+        updateActiveNav(document.getElementById('arcs-btn'));
     });
+    
+    // Navegación principal
+    const arcsBtn = document.getElementById('arcs-btn');
+    const charactersBtn = document.getElementById('characters-btn');
+    const triviaBtn = document.getElementById('trivia-btn');
+    
+    arcsBtn.addEventListener('click', () => {
+        showArcs();
+        updateActiveNav(arcsBtn);
+    });
+    
+    charactersBtn.addEventListener('click', () => {
+        showDatabase();
+        updateActiveNav(charactersBtn);
+    });
+    
+    triviaBtn.addEventListener('click', () => {
+        showTrivia();
+        updateActiveNav(triviaBtn);
+    });
+    
+    // Event listeners de la trivia
+    const startTriviaBtn = document.getElementById('start-trivia-btn');
+    const quitTriviaBtn = document.getElementById('quit-trivia-btn');
+    const restartTriviaBtn = document.getElementById('restart-trivia-btn');
+    
+    startTriviaBtn.addEventListener('click', startTrivia);
+    quitTriviaBtn.addEventListener('click', quitTrivia);
+    restartTriviaBtn.addEventListener('click', restartTrivia);
 }
 
 // Inicializar la aplicación cuando el DOM esté cargado
